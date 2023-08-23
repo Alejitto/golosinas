@@ -15,7 +15,7 @@ public class JavaApplication10 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Bolsa bolsa = new Bolsa(5);
+        Bolsa <Chocolate> bolsa = new Bolsa<Chocolate>(5);
         
         Chocolate c = new Chocolate("milka");
         Chocolate c1 = new Chocolate("milka");
@@ -27,17 +27,10 @@ public class JavaApplication10 {
         bolsa.add(c);
         bolsa.add(c1);
         bolsa.add(c2);
-        bolsa.add(g1);
-        bolsa.add(g2);
         
-        for(Object o: bolsa){
-            if(o instanceof Chocolate){
-                Chocolate chocolate =(Chocolate) o;
-                System.out.println(chocolate.getMarca());
-            }else{
-                Golosina golosina = (Golosina) o;
-                System.out.println(golosina.getNombre());
-            }
+        
+        for(Chocolate chocolate: bolsa){
+            System.out.println(chocolate.getMarca());
         }
         
     }

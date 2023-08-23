@@ -11,8 +11,8 @@ import java.util.Iterator;
  *
  * @author alexc
  */
-public class Bolsa implements Iterable{
-    private ArrayList lista = new ArrayList();
+public class Bolsa <T> implements Iterable <T>{
+    private ArrayList <T> lista = new ArrayList <T>();
     private int tope;
 
     public Bolsa(int tope) {
@@ -20,7 +20,7 @@ public class Bolsa implements Iterable{
         this.tope = tope;
     }
     
-    public void add(Object objeto){
+    public void add(T  objeto){
         if(lista.size()<=tope){
             lista.add(objeto);
         }else{
@@ -28,7 +28,7 @@ public class Bolsa implements Iterable{
         }
     }
     
-    public Iterator iterator(){
+    public Iterator <T> iterator(){
         return lista.iterator();
     }
 }
